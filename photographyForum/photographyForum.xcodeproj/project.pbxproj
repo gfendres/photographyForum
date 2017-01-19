@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24FC3A36BE538E4B361A302F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC37CFD0E813851D0E2E13 /* FeedViewController.swift */; };
 		4951A1E098B522B6E4EC3E0B /* Pods_photographyForumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F176AC7BEFA239248CD6025E /* Pods_photographyForumTests.framework */; };
 		D1C918881E3179CD00B64496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C918871E3179CD00B64496 /* AppDelegate.swift */; };
 		D1C9188A1E3179CD00B64496 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C918891E3179CD00B64496 /* ViewController.swift */; };
-		D1C9188D1E3179CD00B64496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C9188B1E3179CD00B64496 /* Main.storyboard */; };
 		D1C9188F1E3179CD00B64496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C9188E1E3179CD00B64496 /* Assets.xcassets */; };
 		D1C918921E3179CD00B64496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C918901E3179CD00B64496 /* LaunchScreen.storyboard */; };
 		D1C9189D1E3179CE00B64496 /* photographyForumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C9189C1E3179CE00B64496 /* photographyForumTests.swift */; };
@@ -29,12 +29,12 @@
 
 /* Begin PBXFileReference section */
 		1E60B2A7FD2DA73FAB3BF916 /* Pods-photographyForum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photographyForum.release.xcconfig"; path = "Pods/Target Support Files/Pods-photographyForum/Pods-photographyForum.release.xcconfig"; sourceTree = "<group>"; };
+		24FC37CFD0E813851D0E2E13 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		850E85D0FB4C33621D94D79C /* Pods-photographyForum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photographyForum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photographyForum/Pods-photographyForum.debug.xcconfig"; sourceTree = "<group>"; };
 		D1147DB7D0A54BA2FD0558C2 /* Pods-photographyForumTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photographyForumTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-photographyForumTests/Pods-photographyForumTests.release.xcconfig"; sourceTree = "<group>"; };
 		D1C918841E3179CD00B64496 /* photographyForum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photographyForum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C918871E3179CD00B64496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C918891E3179CD00B64496 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D1C9188C1E3179CD00B64496 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D1C9188E1E3179CD00B64496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1C918911E3179CD00B64496 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1C918931E3179CD00B64496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24FC36EF2DF9C2C6764662D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				24FC37CFD0E813851D0E2E13 /* FeedViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		44469CCECA4A8B1A76756D3A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,12 +117,11 @@
 		D1C918861E3179CD00B64496 /* photographyForum */ = {
 			isa = PBXGroup;
 			children = (
+				D1C918A81E317D3B00B64496 /* Modules */,
+				D1C918A71E317CF400B64496 /* Resources */,
 				D1C918871E3179CD00B64496 /* AppDelegate.swift */,
 				D1C918891E3179CD00B64496 /* ViewController.swift */,
-				D1C9188B1E3179CD00B64496 /* Main.storyboard */,
-				D1C9188E1E3179CD00B64496 /* Assets.xcassets */,
 				D1C918901E3179CD00B64496 /* LaunchScreen.storyboard */,
-				D1C918931E3179CD00B64496 /* Info.plist */,
 			);
 			path = photographyForum;
 			sourceTree = "<group>";
@@ -126,6 +133,31 @@
 				D1C9189E1E3179CE00B64496 /* Info.plist */,
 			);
 			path = photographyForumTests;
+			sourceTree = "<group>";
+		};
+		D1C918A71E317CF400B64496 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D1C9188E1E3179CD00B64496 /* Assets.xcassets */,
+				D1C918931E3179CD00B64496 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D1C918A81E317D3B00B64496 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D1C918A91E317E4F00B64496 /* Feed */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D1C918A91E317E4F00B64496 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				24FC36EF2DF9C2C6764662D1 /* Views */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +253,6 @@
 			files = (
 				D1C918921E3179CD00B64496 /* LaunchScreen.storyboard in Resources */,
 				D1C9188F1E3179CD00B64496 /* Assets.xcassets in Resources */,
-				D1C9188D1E3179CD00B64496 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +293,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A1976F6892C5ED8FB33F0641 /* [CP] Copy Pods Resources */ = {
@@ -322,7 +353,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -334,6 +365,7 @@
 			files = (
 				D1C9188A1E3179CD00B64496 /* ViewController.swift in Sources */,
 				D1C918881E3179CD00B64496 /* AppDelegate.swift in Sources */,
+				24FC3A36BE538E4B361A302F /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,14 +388,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D1C9188B1E3179CD00B64496 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D1C9188C1E3179CD00B64496 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D1C918901E3179CD00B64496 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -549,6 +573,7 @@
 				D1C918A31E3179CE00B64496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D1C918A41E3179CE00B64496 /* Build configuration list for PBXNativeTarget "photographyForumTests" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +582,7 @@
 				D1C918A61E3179CE00B64496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
