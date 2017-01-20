@@ -34,6 +34,7 @@ class FeedCell: UITableViewCell {
   var descriptionLabel: UILabel! = {
     let label = UILabel()
     label.font = UIFont.systemFont(ofSize: 12)
+    label.numberOfLines = 0
     return label
   }()
 

@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24FC32750D9C595BCA510B32 /* FeedWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC3FAE8741C6FA5D00979B /* FeedWebService.swift */; };
 		24FC336342792E5783509928 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC398B3C0822283EE3EF02 /* FeedCell.swift */; };
 		24FC3A36BE538E4B361A302F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC37CFD0E813851D0E2E13 /* FeedViewController.swift */; };
-		24FC3CEAF712A6EC402033F1 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC3CBEC8793C21092DA1E2 /* Feed.swift */; };
+		24FC3CEAF712A6EC402033F1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC3CBEC8793C21092DA1E2 /* Post.swift */; };
 		24FC3FC903B53A2406F0AF62 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC3DAF04BF9876D123A373 /* FeedViewModel.swift */; };
 		4951A1E098B522B6E4EC3E0B /* Pods_photographyForumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F176AC7BEFA239248CD6025E /* Pods_photographyForumTests.framework */; };
 		D1C918881E3179CD00B64496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C918871E3179CD00B64496 /* AppDelegate.swift */; };
@@ -36,8 +37,9 @@
 		1E60B2A7FD2DA73FAB3BF916 /* Pods-photographyForum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photographyForum.release.xcconfig"; path = "Pods/Target Support Files/Pods-photographyForum/Pods-photographyForum.release.xcconfig"; sourceTree = "<group>"; };
 		24FC37CFD0E813851D0E2E13 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		24FC398B3C0822283EE3EF02 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
-		24FC3CBEC8793C21092DA1E2 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		24FC3CBEC8793C21092DA1E2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		24FC3DAF04BF9876D123A373 /* FeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		24FC3FAE8741C6FA5D00979B /* FeedWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedWebService.swift; sourceTree = "<group>"; };
 		850E85D0FB4C33621D94D79C /* Pods-photographyForum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photographyForum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photographyForum/Pods-photographyForum.debug.xcconfig"; sourceTree = "<group>"; };
 		D1147DB7D0A54BA2FD0558C2 /* Pods-photographyForumTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photographyForumTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-photographyForumTests/Pods-photographyForumTests.release.xcconfig"; sourceTree = "<group>"; };
 		D1C918841E3179CD00B64496 /* photographyForum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photographyForum.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,10 +78,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24FC3102B174BBC05B870B04 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				24FC315CFB28984253B290E8 /* Web */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		24FC315CFB28984253B290E8 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				24FC3FAE8741C6FA5D00979B /* FeedWebService.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
 		24FC3287821D36645A81EE6A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				24FC3CBEC8793C21092DA1E2 /* Feed.swift */,
+				24FC3CBEC8793C21092DA1E2 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,6 +169,7 @@
 				D1C918891E3179CD00B64496 /* ViewController.swift */,
 				D1C918901E3179CD00B64496 /* LaunchScreen.storyboard */,
 				24FC3287821D36645A81EE6A /* Models */,
+				24FC3102B174BBC05B870B04 /* Services */,
 			);
 			path = photographyForum;
 			sourceTree = "<group>";
@@ -409,7 +428,8 @@
 				24FC336342792E5783509928 /* FeedCell.swift in Sources */,
 				24FC3FC903B53A2406F0AF62 /* FeedViewModel.swift in Sources */,
 				D1C918AD1E31988100B64496 /* ReusableView.swift in Sources */,
-				24FC3CEAF712A6EC402033F1 /* Feed.swift in Sources */,
+				24FC3CEAF712A6EC402033F1 /* Post.swift in Sources */,
+				24FC32750D9C595BCA510B32 /* FeedWebService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,5 +8,7 @@ import RxSwift
 import RxCocoa
 
 class FeedViewModel {
-  var feedItems = Variable<[Feed]>([Feed(userName: "username", userImage: #imageLiteral(resourceName: "photo"), forum: "Photography", description: "description", images: [])])
+ // var feedItems = Variable<[Feed]>([Feed(userName: "username", userImage: #imageLiteral(resourceName: "photo"), forum: "Photography", description: "description", images: [])])
+
+  var items = FeedWebService().fetch()
 }

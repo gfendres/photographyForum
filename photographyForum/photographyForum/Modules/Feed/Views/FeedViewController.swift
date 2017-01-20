@@ -8,6 +8,7 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+import AlamofireImage
 
 class FeedViewController: UIViewController {
 
@@ -35,15 +36,15 @@ class FeedViewController: UIViewController {
     title = "Photography"
     view.backgroundColor = UIColor.lightGray
     view.addSubview(tableView)
-
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    feedViewModel.feedItems.asDriver()
+    feedViewModel.items
+      .asDriver(onErrorJustReturn: [])
       .drive(tableView.rx.items(cellIdentifier: FeedCell.reuseIdentifier, cellType: FeedCell.self)) { (index, feed, cell) in
-        cell.userImageView.image = feed.userImage
+        cell.userImageView.af_setImage(withURL: URL(string: feed.userImage)!)
         cell.userNameLabel.text = feed.userName
         cell.forumNameLabel.text = feed.forum
         cell.descriptionLabel.text = feed.description
@@ -52,7 +53,6 @@ class FeedViewController: UIViewController {
     tableView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
-
   }
 
 }
