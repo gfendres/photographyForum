@@ -44,7 +44,7 @@ class FeedViewController: UIViewController {
     feedViewModel.items
       .asDriver(onErrorJustReturn: [])
       .drive(tableView.rx.items(cellIdentifier: FeedCell.reuseIdentifier, cellType: FeedCell.self)) { (index, feed, cell) in
-        cell.userImageView.af_setImage(withURL: URL(string: feed.userImage)!)
+        cell.userImageView.af_setImage(withURL: URL(string: feed.userImageUrl)!)
         cell.userNameLabel.text = feed.userName
         cell.forumNameLabel.text = feed.forum
         cell.descriptionLabel.text = feed.description
