@@ -4,16 +4,15 @@
 //
 
 import Foundation
-import UIKit
 import SwiftyJSON
 
 struct Post {
-  var userName: String
-  var userImageUrl: String
-  var forum: String
-  var description: String
-  var imagesUrls: [String] = []
-  var upVotes: Int = 0
+  let userName: String
+  let userImageUrl: String
+  let forum: String
+  let description: String
+  let imagesUrls: [String]
+  let upVotes: Int
   
   init(json: JSON) {
     userName = json["createdBy"]["displayName"].stringValue
