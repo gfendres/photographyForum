@@ -13,6 +13,7 @@ struct Post {
   var forum: String
   var description: String
   var imagesUrls: [String] = []
+  var upVotes: Int = 0
   
   init(json: JSON) {
     userName = json["createdBy"]["displayName"].stringValue
@@ -22,5 +23,6 @@ struct Post {
     imagesUrls = json["entities"]["images"].arrayValue.map { json in
       return json["cdnUrl"].stringValue
     }
+    upVotes = json["stats"]["upVotes"].intValue
   }
 }

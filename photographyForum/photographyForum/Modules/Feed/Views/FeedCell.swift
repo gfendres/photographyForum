@@ -71,6 +71,13 @@ class FeedCell: UITableViewCell {
     return view
   }()
 
+  var upVotesView: UpVotesView! = {
+    let view = UpVotesView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    view.backgroundColor = UIColor.clear
+    return view
+  }()
+
   // MARK: Variables
 
   var imagesUrl = Variable<[String]>([])
@@ -81,17 +88,42 @@ class FeedCell: UITableViewCell {
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
 
+    headerView.addSubview(userNameLabel)
     headerView.addSubview(userImageView)
     headerView.addSubview(forumNameLabel)
-    headerView.addSubview(userNameLabel)
 
     addSubview(headerView)
     addSubview(descriptionLabel)
     addSubview(imagesCollectionView)
+    addSubview(upVotesView)
 
+    setupConstraints()
+    setupObservables()
+
+    imagesCollectionView.delegate = self
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    userImageView.image = nil
+  }
+
+  // MARK: Private
+
+  private func isEmptyImages(_ images: [String]) -> Bool {
+    return images.filter { url in
+      return url.isEmpty
+    }.count > 0
+  }
+
+  private func setupConstraints() {
     headerView.snp.makeConstraints { make in
       make.leading.top.trailing.equalToSuperview()
-      make.height.equalTo(80).priorityLow()
+      make.height.equalTo(80).priority(250)
     }
 
     userImageView.snp.makeConstraints { make in
@@ -114,19 +146,29 @@ class FeedCell: UITableViewCell {
     }
 
     imagesCollectionView.snp.makeConstraints { make in
-      make.top.equalTo(headerView.snp.bottom).offset(20).priorityLow()
+      make.top.equalTo(headerView.snp.bottom).priority(250)
       self.collectionHeightConstraint = make.height.equalTo(snp.width).constraint
       make.trailing.leading.equalToSuperview()
     }
 
     descriptionLabel.snp.makeConstraints { make in
-      make.top.equalTo(imagesCollectionView.snp.bottom).offset(20)
-      make.leading.equalTo(userImageView)
-      make.trailing.bottom.equalToSuperview().offset(-margin)
+      make.top.equalTo(imagesCollectionView.snp.bottom).offset(10)
+      make.leading.equalTo(upVotesView.snp.trailing)
+      make.trailing.equalToSuperview().offset(-margin)
+      make.bottom.lessThanOrEqualToSuperview().offset(-margin)
+
     }
 
-    imagesCollectionView.delegate = self
+    upVotesView.snp.makeConstraints { make in
+      make.top.equalTo(imagesCollectionView.snp.bottom).offset(10)
+      make.leading.equalToSuperview().offset(margin)
+      make.height.equalTo(30)
+      make.width.equalTo(60)
+      make.bottom.lessThanOrEqualToSuperview().offset(-margin)
+    }
+  }
 
+  private func setupObservables() {
     imagesUrl
       .asObservable()
       .map(isEmptyImages)
@@ -140,27 +182,11 @@ class FeedCell: UITableViewCell {
       .asDriver()
       .drive(imagesCollectionView.rx.items(cellIdentifier: ImageCell.reuseIdentifier, cellType: ImageCell.self)) { (index, imageUrl, cell) in
         guard let url = URL(string: imageUrl) else {
-          fatalError()
+          cell.imageView.image = #imageLiteral(resourceName: "imagePlaceholder")
+          return
         }
-        cell.imageView.af_setImage(withURL: url, placeholderImage: UIImage(), imageTransition: .crossDissolve(0.2))
+        cell.imageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "imagePlaceholder"), imageTransition: .crossDissolve(0.2))
       }.addDisposableTo(disposeBag)
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-
-  override func prepareForReuse() {
-    super.prepareForReuse()
-    userImageView.image = nil
-  }
-
-  // MARK: Private
-
-  private func isEmptyImages(_ images: [String]) -> Bool {
-    return images.filter { url in
-      return url.isEmpty
-    }.count > 0
   }
 }
 

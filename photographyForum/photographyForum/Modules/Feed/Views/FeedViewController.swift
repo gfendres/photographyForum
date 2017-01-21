@@ -16,10 +16,11 @@ class FeedViewController: UIViewController {
 
   private var tableView: UITableView! = {
     let tableView = UITableView()
-    tableView.backgroundColor = UIColor.clear
     tableView.register(FeedCell.self)
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 500
+    tableView.allowsSelection = false
+    tableView.isHidden = true
     return tableView
   }()
 
@@ -34,12 +35,19 @@ class FeedViewController: UIViewController {
   override func loadView() {
     super.loadView()
     title = "Photography"
-    view.backgroundColor = UIColor.lightGray
+    view.backgroundColor = UIColor.white
     view.addSubview(tableView)
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    feedViewModel
+      .items
+      .asDriver(onErrorJustReturn: [])
+      .map { $0.count == 0 }
+      .drive(tableView.rx.isHidden)
+      .addDisposableTo(disposeBag)
 
     feedViewModel.items
       .asDriver(onErrorJustReturn: [])
@@ -47,11 +55,12 @@ class FeedViewController: UIViewController {
 
         guard let url = URL(string:  feed.userImageUrl) else { return }
         
-        cell.userImageView.af_setImage(withURL: url, placeholderImage: UIImage(), imageTransition: .crossDissolve(0.2))
+        cell.userImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "userPlaceholder"), filter: CircleFilter(), imageTransition: .crossDissolve(0.2))
         cell.userNameLabel.text = feed.userName
         cell.forumNameLabel.text = feed.forum
         cell.descriptionLabel.text = feed.description
         cell.imagesUrl.value = feed.imagesUrls
+        cell.upVotesView.upVotes = feed.upVotes
         
     }.addDisposableTo(disposeBag)
 

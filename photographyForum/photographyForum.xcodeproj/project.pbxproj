@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		24FC32750D9C595BCA510B32 /* FeedWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC3FAE8741C6FA5D00979B /* FeedWebService.swift */; };
 		24FC336342792E5783509928 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC398B3C0822283EE3EF02 /* FeedCell.swift */; };
+		24FC3639B85262B10DDF2DF5 /* UpVotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC317999AF3A6EA912064B /* UpVotesView.swift */; };
+		24FC38ABDCB9219AC3FCD424 /* FeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC327A37052FD6A49F09F4 /* FeedHeaderView.swift */; };
 		24FC3A36BE538E4B361A302F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC37CFD0E813851D0E2E13 /* FeedViewController.swift */; };
 		24FC3C2FF722E5153320EBE7 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC3E2BC83532B3BC323CA0 /* ImageCell.swift */; };
 		24FC3CEAF712A6EC402033F1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FC3CBEC8793C21092DA1E2 /* Post.swift */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		1E60B2A7FD2DA73FAB3BF916 /* Pods-photographyForum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photographyForum.release.xcconfig"; path = "Pods/Target Support Files/Pods-photographyForum/Pods-photographyForum.release.xcconfig"; sourceTree = "<group>"; };
+		24FC317999AF3A6EA912064B /* UpVotesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpVotesView.swift; sourceTree = "<group>"; };
+		24FC327A37052FD6A49F09F4 /* FeedHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedHeaderView.swift; sourceTree = "<group>"; };
 		24FC37CFD0E813851D0E2E13 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		24FC398B3C0822283EE3EF02 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		24FC3CBEC8793C21092DA1E2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				24FC37CFD0E813851D0E2E13 /* FeedViewController.swift */,
 				24FC398B3C0822283EE3EF02 /* FeedCell.swift */,
 				24FC3E2BC83532B3BC323CA0 /* ImageCell.swift */,
+				24FC317999AF3A6EA912064B /* UpVotesView.swift */,
+				24FC327A37052FD6A49F09F4 /* FeedHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -438,6 +444,8 @@
 				24FC3CEAF712A6EC402033F1 /* Post.swift in Sources */,
 				24FC32750D9C595BCA510B32 /* FeedWebService.swift in Sources */,
 				24FC3C2FF722E5153320EBE7 /* ImageCell.swift in Sources */,
+				24FC3639B85262B10DDF2DF5 /* UpVotesView.swift in Sources */,
+				24FC38ABDCB9219AC3FCD424 /* FeedHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
