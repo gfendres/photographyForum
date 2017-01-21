@@ -40,7 +40,7 @@ class FeedViewController: UIViewController {
 
   override func loadView() {
     super.loadView()
-    title = "Photography"
+    title = "hubchat"
     view.backgroundColor = UIColor.white
     view.addSubview(tableView)
   }

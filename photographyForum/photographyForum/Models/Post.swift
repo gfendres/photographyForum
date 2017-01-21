@@ -22,6 +22,7 @@ struct Post {
     imagesUrls = json["entities"]["images"].arrayValue.map { json in
       return json["cdnUrl"].stringValue
     }
+
     upVotes = json["stats"]["upVotes"].intValue
   }
 }

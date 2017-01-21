@@ -115,9 +115,7 @@ class FeedCell: UITableViewCell {
   // MARK: Private
 
   private func isEmptyImages(_ images: [String]) -> Bool {
-    return images.filter { url in
-      return url.isEmpty
-    }.count > 0
+    return images.isEmpty
   }
 
   private func setupConstraints() {
@@ -148,6 +146,7 @@ class FeedCell: UITableViewCell {
     imagesCollectionView.snp.makeConstraints { make in
       make.top.equalTo(headerView.snp.bottom).priority(250)
       self.collectionHeightConstraint = make.height.equalTo(snp.width).constraint
+      make.height.equalTo(0).priority(10)
       make.trailing.leading.equalToSuperview()
     }
 
@@ -170,11 +169,14 @@ class FeedCell: UITableViewCell {
 
   private func setupObservables() {
     imagesUrl
-      .asObservable()
+      .asDriver()
+      .skip(1)
       .map(isEmptyImages)
-      .subscribe(onNext: { isEmpty in
+      .drive(onNext: { isEmpty in
         if isEmpty {
           self.collectionHeightConstraint?.deactivate()
+        } else {
+          self.collectionHeightConstraint?.activate()
         }
       }).addDisposableTo(disposeBag)
 
