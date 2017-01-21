@@ -8,6 +8,7 @@ import UIKit
 import SnapKit
 import RxCocoa
 import RxSwift
+import AlamofireImage
 
 class FeedCell: UITableViewCell {
 
@@ -80,7 +81,29 @@ class FeedCell: UITableViewCell {
 
   // MARK: Variables
 
-  var imagesUrl = Variable<[String]>([])
+  private var imagesUrl = Variable<[String]>([])
+
+  var viewModel: PostViewModel? {
+    didSet {
+      guard let viewModel = viewModel else { return }
+
+      if let url = viewModel.userImageUrl {
+        userImageView.af_setImage(
+          withURL: url,
+          placeholderImage: #imageLiteral(resourceName: "userPlaceholder"),
+          filter: CircleFilter(),
+          imageTransition: .crossDissolve(0.2))
+      } else {
+        userImageView.image = #imageLiteral(resourceName: "userPlaceholder")
+      }
+
+      userNameLabel.text = viewModel.userName
+      forumNameLabel.text = viewModel.forum
+      descriptionLabel.text = viewModel.description
+      upVotesView.upVotes = viewModel.upVotes
+      imagesUrl.value = viewModel.imagesUrls
+    }
+  }
   private let disposeBag = DisposeBag()
 
   // MARK: Lifecycle

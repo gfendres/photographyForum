@@ -31,9 +31,7 @@ class FeedViewController: UIViewController {
 
   // MARK: Variables
 
-  var feedViewModel = FeedViewModel()
-  var forumViewModel = ForumViewModel()
-  
+  private var feedViewModel = FeedViewModel()
   private var disposeBag = DisposeBag()
 
   // MARK: Lifecycle
@@ -48,7 +46,7 @@ class FeedViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.tableHeaderView = headerView
-    headerView.forumViewModel = forumViewModel
+    headerView.forumViewModel = ForumViewModel()
     setupConstraints()
     setupObservables()
   }
@@ -76,21 +74,8 @@ class FeedViewController: UIViewController {
 
     feedViewModel.items
       .asDriver(onErrorJustReturn: [])
-      .drive(tableView.rx.items(cellIdentifier: FeedCell.reuseIdentifier, cellType: FeedCell.self)) { (index, feed, cell) in
-
-        guard let url = URL(string:  feed.userImageUrl) else { return }
-
-        cell.userImageView.af_setImage(
-          withURL: url,
-          placeholderImage: #imageLiteral(resourceName: "userPlaceholder"),
-          filter: CircleFilter(),
-          imageTransition: .crossDissolve(0.2))
-        cell.userNameLabel.text = feed.userName
-        cell.forumNameLabel.text = feed.forum
-        cell.descriptionLabel.text = feed.description
-        cell.imagesUrl.value = feed.imagesUrls
-        cell.upVotesView.upVotes = feed.upVotes
-
+      .drive(tableView.rx.items(cellIdentifier: FeedCell.reuseIdentifier, cellType: FeedCell.self)) { (index, post, cell) in
+        cell.viewModel = PostViewModel(post: post)
       }.addDisposableTo(disposeBag)
 
   }

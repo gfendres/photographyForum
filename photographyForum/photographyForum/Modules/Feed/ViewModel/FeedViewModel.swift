@@ -8,5 +8,9 @@ import RxSwift
 import RxCocoa
 
 class FeedViewModel {
-  var items = FeedWebService().fetch()
+  let items: Observable<[Post]>!
+
+  required init(service: FeedWebService = FeedWebService()) {
+    items = service.fetch()
+  }
 }
