@@ -19,7 +19,7 @@ class FeedViewController: UIViewController {
     tableView.backgroundColor = UIColor.clear
     tableView.register(FeedCell.self)
     tableView.rowHeight = UITableViewAutomaticDimension
-    tableView.estimatedRowHeight = 200
+    tableView.estimatedRowHeight = 500
     return tableView
   }()
 
@@ -44,10 +44,15 @@ class FeedViewController: UIViewController {
     feedViewModel.items
       .asDriver(onErrorJustReturn: [])
       .drive(tableView.rx.items(cellIdentifier: FeedCell.reuseIdentifier, cellType: FeedCell.self)) { (index, feed, cell) in
-        cell.userImageView.af_setImage(withURL: URL(string: feed.userImageUrl)!)
+
+        guard let url = URL(string:  feed.userImageUrl) else { return }
+        
+        cell.userImageView.af_setImage(withURL: url, placeholderImage: UIImage(), imageTransition: .crossDissolve(0.2))
         cell.userNameLabel.text = feed.userName
         cell.forumNameLabel.text = feed.forum
         cell.descriptionLabel.text = feed.description
+        cell.imagesUrl.value = feed.imagesUrls
+        
     }.addDisposableTo(disposeBag)
 
     tableView.snp.makeConstraints { make in
