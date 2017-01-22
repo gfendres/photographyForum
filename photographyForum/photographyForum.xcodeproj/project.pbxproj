@@ -23,7 +23,6 @@
 		D1C918881E3179CD00B64496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C918871E3179CD00B64496 /* AppDelegate.swift */; };
 		D1C9188F1E3179CD00B64496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C9188E1E3179CD00B64496 /* Assets.xcassets */; };
 		D1C918921E3179CD00B64496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C918901E3179CD00B64496 /* LaunchScreen.storyboard */; };
-		D1C9189D1E3179CE00B64496 /* photographyForumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C9189C1E3179CE00B64496 /* photographyForumTests.swift */; };
 		D1C918AD1E31988100B64496 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C918AB1E31988100B64496 /* ReusableView.swift */; };
 		D1C918AE1E31988100B64496 /* UITableViewCell+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C918AC1E31988100B64496 /* UITableViewCell+Register.swift */; };
 		D1C918E81E32CFE200B64496 /* UICollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C918E71E32CFE200B64496 /* UICollectionView+Register.swift */; };
@@ -62,7 +61,6 @@
 		D1C918911E3179CD00B64496 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1C918931E3179CD00B64496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1C918981E3179CE00B64496 /* photographyForumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photographyForumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1C9189C1E3179CE00B64496 /* photographyForumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photographyForumTests.swift; sourceTree = "<group>"; };
 		D1C9189E1E3179CE00B64496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1C918AB1E31988100B64496 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		D1C918AC1E31988100B64496 /* UITableViewCell+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Register.swift"; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 		D1C9189B1E3179CE00B64496 /* photographyForumTests */ = {
 			isa = PBXGroup;
 			children = (
-				D1C9189C1E3179CE00B64496 /* photographyForumTests.swift */,
 				D1C9189E1E3179CE00B64496 /* Info.plist */,
 			);
 			path = photographyForumTests;
@@ -295,7 +292,7 @@
 				TargetAttributes = {
 					D1C918831E3179CD00B64496 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = QJS9T3LDT7;
+						DevelopmentTeam = 3NZ7LC2G5M;
 						ProvisioningStyle = Automatic;
 					};
 					D1C918971E3179CE00B64496 = {
@@ -465,7 +462,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1C9189D1E3179CE00B64496 /* photographyForumTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,11 +585,11 @@
 			baseConfigurationReference = 850E85D0FB4C33621D94D79C /* Pods-photographyForum.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QJS9T3LDT7;
+				DEVELOPMENT_TEAM = 3NZ7LC2G5M;
 				INFOPLIST_FILE = photographyForum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hubchat.photographyForum;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hubchat.photography;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -604,11 +600,11 @@
 			baseConfigurationReference = 1E60B2A7FD2DA73FAB3BF916 /* Pods-photographyForum.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QJS9T3LDT7;
+				DEVELOPMENT_TEAM = 3NZ7LC2G5M;
 				INFOPLIST_FILE = photographyForum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hubchat.photographyForum;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hubchat.photography;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

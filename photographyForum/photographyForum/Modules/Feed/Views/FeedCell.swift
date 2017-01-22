@@ -193,7 +193,6 @@ class FeedCell: UITableViewCell {
   private func setupObservables() {
     imagesUrl
       .asDriver()
-      .skip(1)
       .map(isEmptyImages)
       .drive(onNext: { isEmpty in
         if isEmpty {

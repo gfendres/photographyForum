@@ -119,7 +119,8 @@ class FeedHeaderView: UIView {
 
     logoImageView.snp.makeConstraints { make in
       make.centerY.equalTo(backgroundImageView.snp.bottom)
-      make.size.equalToSuperview().dividedBy(3)
+      make.height.equalToSuperview().dividedBy(3)
+      make.width.equalTo(self.snp.height).dividedBy(3)
       make.leading.equalToSuperview().offset(margin)
     }
 
