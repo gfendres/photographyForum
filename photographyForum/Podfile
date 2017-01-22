@@ -18,6 +18,7 @@ target 'photographyForum' do
     # Pods for testing
     pod 'Quick'
     pod 'Nimble'
+    pod 'SwiftyJSON'
   end
 
 end
