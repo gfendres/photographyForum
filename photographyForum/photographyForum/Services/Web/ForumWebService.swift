@@ -8,7 +8,7 @@ import Alamofire
 import RxSwift
 import SwiftyJSON
 
-struct ForumWebService {
+class ForumWebService {
   func fetch() -> Observable<Forum> {
     return Observable.create { observer in
       Alamofire.request("https://api.hubchat.com/v1/forum/photography").validate().responseJSON { response in

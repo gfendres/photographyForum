@@ -15,38 +15,6 @@ import SwiftyJSON
 
 class PostViewModelSpec: QuickSpec {
   
-  let validJsonMock: JSON =
-    ["createdBy":
-      ["displayName": "username",
-       "avatar": ["url": "www.fakeurl.com"]
-      ],
-     "forum": ["title": "Photography"],
-     "rawContent": "some description",
-     "entities":
-        ["images":
-          [
-            ["cdnUrl": "www.fakeimageurl.com"]
-          ]
-        ],
-     "stats": ["upVotes": 10]
-    ]
-  
-  let invalidJsonMock: JSON =
-    ["createdBy":
-      ["displayName": "username",
-       "avatar": ["url": ""]
-      ],
-     "forum": ["title": "Photography"],
-     "rawContent": "some description",
-     "entities":
-      ["images":
-        [
-          ["cdnUrl": "www.fakeimageurl.com"]
-        ]
-      ],
-     "stats": ["upVotes": 10]
-  ]
-  
   override func spec() {
     describe("Post view model") {
       var postViewModel: PostViewModel!
@@ -54,7 +22,7 @@ class PostViewModelSpec: QuickSpec {
       describe("init with post") {
         context("json with url") {
           beforeEach {
-            postViewModel = PostViewModel(post: Post(json: self.validJsonMock))
+            postViewModel = PostViewModel(post: Post(json: FeedJsonMock.validJson))
           }
           
           it("should set the variables") {
@@ -69,7 +37,7 @@ class PostViewModelSpec: QuickSpec {
 
         context("json without url") {
           beforeEach {
-            postViewModel = PostViewModel(post: Post(json: self.invalidJsonMock))
+            postViewModel = PostViewModel(post: Post(json: FeedJsonMock.invalidJson))
           }
           
           it("should set the variables") {

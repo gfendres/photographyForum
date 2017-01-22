@@ -19,6 +19,8 @@ target 'photographyForum' do
     pod 'Quick'
     pod 'Nimble'
     pod 'SwiftyJSON'
+    pod 'RxSwift',    '~> 3.0'
+    pod 'RxCocoa',    '~> 3.0'
   end
 
 end

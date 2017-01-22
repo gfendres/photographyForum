@@ -27,6 +27,11 @@
 		D1C918AE1E31988100B64496 /* UITableViewCell+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C918AC1E31988100B64496 /* UITableViewCell+Register.swift */; };
 		D1C918E81E32CFE200B64496 /* UICollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C918E71E32CFE200B64496 /* UICollectionView+Register.swift */; };
 		D1DAC7F81E34352200AAF23B /* PostViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DAC7F71E34352200AAF23B /* PostViewModelSpec.swift */; };
+		D1DAC7FA1E3448CD00AAF23B /* FeedServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DAC7F91E3448CD00AAF23B /* FeedServiceMock.swift */; };
+		D1DAC7FC1E34494E00AAF23B /* PostSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DAC7FB1E34494E00AAF23B /* PostSpec.swift */; };
+		D1DAC7FE1E344A5400AAF23B /* ForumViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DAC7FD1E344A5400AAF23B /* ForumViewModelSpec.swift */; };
+		D1DAC8001E344AB700AAF23B /* ForumServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DAC7FF1E344AB700AAF23B /* ForumServiceMock.swift */; };
+		D1DAC8021E344E3300AAF23B /* ForumSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DAC8011E344E3300AAF23B /* ForumSpec.swift */; };
 		EA6A276C267F6A3EBB83EE6D /* Pods_photographyForum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A705ED2300880F62EF51EB /* Pods_photographyForum.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +72,11 @@
 		D1C918AC1E31988100B64496 /* UITableViewCell+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Register.swift"; sourceTree = "<group>"; };
 		D1C918E71E32CFE200B64496 /* UICollectionView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Register.swift"; sourceTree = "<group>"; };
 		D1DAC7F71E34352200AAF23B /* PostViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewModelSpec.swift; sourceTree = "<group>"; };
+		D1DAC7F91E3448CD00AAF23B /* FeedServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedServiceMock.swift; sourceTree = "<group>"; };
+		D1DAC7FB1E34494E00AAF23B /* PostSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSpec.swift; sourceTree = "<group>"; };
+		D1DAC7FD1E344A5400AAF23B /* ForumViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumViewModelSpec.swift; sourceTree = "<group>"; };
+		D1DAC7FF1E344AB700AAF23B /* ForumServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumServiceMock.swift; sourceTree = "<group>"; };
+		D1DAC8011E344E3300AAF23B /* ForumSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumSpec.swift; sourceTree = "<group>"; };
 		E8A705ED2300880F62EF51EB /* Pods_photographyForum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_photographyForum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB55C0097631FAF84E0978D7 /* Pods-photographyForumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photographyForumTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photographyForumTests/Pods-photographyForumTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F176AC7BEFA239248CD6025E /* Pods_photographyForumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_photographyForumTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,6 +253,11 @@
 			isa = PBXGroup;
 			children = (
 				D1DAC7F71E34352200AAF23B /* PostViewModelSpec.swift */,
+				D1DAC7F91E3448CD00AAF23B /* FeedServiceMock.swift */,
+				D1DAC7FB1E34494E00AAF23B /* PostSpec.swift */,
+				D1DAC7FD1E344A5400AAF23B /* ForumViewModelSpec.swift */,
+				D1DAC7FF1E344AB700AAF23B /* ForumServiceMock.swift */,
+				D1DAC8011E344E3300AAF23B /* ForumSpec.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -474,7 +489,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1DAC7FC1E34494E00AAF23B /* PostSpec.swift in Sources */,
 				D1DAC7F81E34352200AAF23B /* PostViewModelSpec.swift in Sources */,
+				D1DAC7FA1E3448CD00AAF23B /* FeedServiceMock.swift in Sources */,
+				D1DAC8001E344AB700AAF23B /* ForumServiceMock.swift in Sources */,
+				D1DAC8021E344E3300AAF23B /* ForumSpec.swift in Sources */,
+				D1DAC7FE1E344A5400AAF23B /* ForumViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
