@@ -2,7 +2,7 @@
 
 # README #
 
-### How do I get set up? ###
+### How do I run the project? ###
 
 * Install CocoaPods - https://cocoapods.org
 * Go to project folder 
